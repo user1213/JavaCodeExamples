@@ -1,0 +1,16 @@
+/***
+ * @author: sagar
+ * @description: Read Write operations 
+ */
+package com.io;
+
+public class ReadWrite {
+
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
