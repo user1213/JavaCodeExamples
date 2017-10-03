@@ -1,0 +1,31 @@
+package com.sorting;
+
+public class Sort {
+
+	public static int[] sortInOneLoop(int[] arr){
+		for(int i = 0, j = i+1; i<arr.length && j<arr.length;){
+			if(arr[i] > arr[j]){
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+				i = 0;
+				j = i+1;
+			}
+			else{
+				i++;
+				j++;
+			}
+		}
+		return arr;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] inArr = {5,4,3,2,1,-1,-2,-3,-4};
+		int[] outArr = sortInOneLoop(inArr);
+		for(int i = 0; i<outArr.length; i++){
+			System.out.println(outArr[i]);
+		}
+	}
+
+}
