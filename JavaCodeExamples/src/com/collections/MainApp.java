@@ -1,0 +1,57 @@
+package com.collections;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class MainApp {
+
+	private static ArrayList<Employee> empList = new ArrayList<Employee>();
+	private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	
+	public void addInput() throws IOException{
+		System.out.println("Enter name: ");
+		String name = br.readLine();
+		
+		System.out.println("Enter company: ");
+		String company = br.readLine();
+		
+		System.out.println("Enter salary: ");
+		double salary = Double.parseDouble(br.readLine());
+		
+		Employee e = new Employee();
+		e.setName(name);
+		e.setCompany(company);
+		e.setSalary(salary);
+		empList.add(e);
+		System.out.println("Total: " + empList.size() + "\n");
+	}
+	
+	public void displayList(){
+		Iterator i = empList.iterator();
+		while(i.hasNext()){
+			Employee eObj = (Employee)i.next();
+			System.out.println(eObj.toString());
+		}
+	}
+	
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		MainApp m = new MainApp();
+		m.addInput();
+		System.out.println("Continue ? (Y/N)");
+		String response = br.readLine();
+		while(response.equalsIgnoreCase("y")){
+			m.addInput();
+			System.out.println("Continue ? (Y/N)");
+			response = br.readLine();
+		}
+		m.displayList();  
+	}
+
+}
